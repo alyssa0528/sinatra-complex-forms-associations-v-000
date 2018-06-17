@@ -11,7 +11,7 @@ class PetsController < ApplicationController
 
   post '/pets' do #creates a new instance of pet and redirects user to that pet's page
     #binding.pry
-    @pet = Pet.create(params[:pet]) 
+    @pet = Pet.create(params[:pet])
     if !params["owner"]["name"].empty? #&& @pet.owner == ""
       @pet.owner = Owner.create(name: params["owner"]["name"])
     end
